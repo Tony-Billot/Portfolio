@@ -1,0 +1,159 @@
+#multicolor-text {
+    font-family: "Arial", sans-serif;
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    background: linear-gradient(to right, #00e676, #005eff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: clamp(24px, 4vw, 48px);
+    text-align: center;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#middle {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+}
+
+#middle::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #00e676, #005eff);
+    transform: translateX(-50%);
+}
+
+
+
+
+.card {
+    position: relative;
+    width: calc(50% - 48px);
+    margin-bottom: 48px;
+    box-sizing: border-box;
+}
+
+.card.left {
+    margin-right: auto;
+}
+
+.card.right {
+    margin-left: auto;
+}
+
+.card-date {
+    margin: 0 0 clamp(8px, 1.5vw, 16px) 0;
+    font-size: clamp(14px, 1.6vw, 20px);
+    color: #00e676;
+    font-family: "Arial", sans-serif;
+}
+
+.code-window {
+    background-color: #0d1117;
+    border: 2px solid #1a4fd6;
+    border-radius: 16px;
+    padding: clamp(24px, 4vw, 48px) clamp(24px, 4vw, 48px) clamp(16px, 3vw, 32px);
+}
+
+.code-window-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+
+.dot-red {
+    background-color: #ff5f57;
+}
+
+.dot-yellow {
+    background-color: #febc2e;
+}
+
+.dot-green {
+    background-color: #28c840;
+}
+
+.code-block {
+    margin: 0;
+    font-family: Consolas, "Arial", sans-serif;
+    font-size: clamp(14px, 1.5vw, 18px);
+    line-height: 1.6;
+    color: #e6edf3;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+
+
+
+
+/* Couleurs bloc code */
+.kw {
+    color: #79c0ff;
+}
+
+.type {
+    color: #7ee787;
+}
+
+.method {
+    color: #d2a8ff;
+}
+
+.param {
+    color: #ffa657;
+}
+
+.var {
+    color: #e6edf3;
+}
+
+.brace-outer {
+    color: #e3b341;
+}
+
+.brace-inner {
+    color: #ff7b72;
+}
+
+.comment {
+    color: #8b949e;
+}
+
+
+/*       */
+
+
+
+
+
+/* Format telephhone */
+
+@media (max-width: 640px) {
+    #middle::before {
+        left: 16px;
+        transform: none;
+    }
+
+    .card {
+        width: calc(100% - 48px);
+        margin-left: 48px !important;
+        margin-right: 0 !important;
+    }
+}
