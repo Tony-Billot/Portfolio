@@ -93,7 +93,7 @@ p {
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     .h2 {
         margin-bottom: clamp(10px, 1.5vw, 20px);
         text-align: left;
@@ -106,4 +106,130 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: clamp(10px, 1.5vw, 24px);
+    padding: clamp(12px, 2vw, 40px);
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    color: #9ca3af;
+    font-family: "Arial", sans-serif;
+    font-size: clamp(12px, 1.4vw, 20px);
+}
+
+ul li .material-icons {
+    font-size: clamp(40px, 5vw, 72px);}
+
+ul li .material-icons.yellow {
+    color: #dfd001;
+}
+
+ul li .material-icons.green {
+    color: #026e22;
+}
+
+ul li .material-icons.blue {
+    color: #4447e6;
+}
+
+
+
+
+
+#projects {
+    padding: 40px 20px 80px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+#projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.project-card {
+    background: #0d1117;
+    border: 1px solid #1a4fd6;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: #00e676;
+}
+
+.project-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    background: #111;
+}
+
+.project-content {
+    padding: 14px;
+}
+
+.project-title {
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 6px;
+}
+
+.project-description {
+    font-size: 0.9rem;
+    color: #b5b5b5;
+    margin-bottom: 10px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tag {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #1f2a44;
+    color: #7ee787;
+}
+
+.skill {
+    cursor: pointer;
+    user-select: none;
+    transition: 0.2s;
+}
+
+.skill.active {
+    background: #00e676;
+    color: #0d1117;
+    border-color: #00e676;
+}
+
+.project-card:hover {
+    transform: translateY(-6px) scale(1.01);
+}
+.project-card {
+    cursor: pointer;
 }

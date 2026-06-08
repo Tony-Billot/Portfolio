@@ -32,7 +32,6 @@ function sortCareerByDate(career) {
 
 
 
-
 function formatDate(dateStr) { // Convertisseur format date français (mois en français / année)
     const date = new Date(dateStr);
     return date.toLocaleDateString("fr-FR", { month: "long", year: "numeric" });
