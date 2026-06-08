@@ -59,9 +59,7 @@ nav a {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-nav a:hover {
-    color: #00e676;
-}
+
 
 #topleft_button a {
     color: #00e676;
@@ -70,37 +68,93 @@ nav a:hover {
     padding: clamp(6px, 0.8vw, 14px) clamp(12px, 1.5vw, 24px);
 }
 
-#nav_contact a {
-    background: linear-gradient(to right, #00e676, #005eff);
-    color: #ffffff;
-    font-weight: bold;
-    font-size: clamp(12px, 1.7vw, 31px);
-    border-bottom: none;
-    padding: clamp(8px, 1vw, 20px) clamp(12px, 1.9vw, 32px);
-    border-radius: 10px;
-    box-shadow: 0 10px 24px rgba(0, 94, 255, 0.18);
-    transform: translateY(-2px);
-}
-
 nav ul {
     display: flex;
     align-items: center;
     width: 100%;
 }
 
-#nav_contact {
-    margin-left: auto;
-}
 
-.active {
+#nav_toogle {
+    background: #253244;
     color: #00e676;
     font-weight: bold;
-    border-bottom: 2px solid #00e676;
+    font-size: clamp(20px, 2.8vw, 48px);
+    padding: clamp(6px, 0.8vw, 14px) clamp(12px, 1.5vw, 24px);
+
+    border: none;
+    outline: none;
+    border-radius: 12px; 
+    cursor: pointer;
 }
 
-#nav_contact a.active, #nav_contact a:hover {
-    color: #ffffff;
-    border-bottom: none;
-    transform: translateY(-3px);
+@media (max-width: 768px) {
+
+    nav {
+    transform-origin: left;
+    animation: slideBar 0.6s ease-out forwards;
 }
 
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: clamp(8px, 1vw, 16px);
+        display: none;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+}
+
+    nav::after {
+        display: none;
+        content: "";
+        position: absolute;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: #1f2937;
+        border: none;
+    }
+
+    @media (min-width: 769px) {
+        #nav_toogle {
+            display: none;
+        }
+
+        #nav_contact a {
+            background: linear-gradient(to right, #00e676, #005eff);
+            color: #ffffff;
+            font-weight: bold;
+            font-size: clamp(12px, 1.7vw, 31px);
+            border-bottom: none;
+            padding: clamp(8px, 1vw, 20px) clamp(12px, 1.9vw, 32px);
+            border-radius: 10px;
+            box-shadow: 0 10px 24px rgba(0, 94, 255, 0.18);
+            transform: translateY(-2px);
+        }
+
+        
+        #nav_contact {
+            margin-left: auto;
+        }
+
+        
+        #nav_contact a.active, #nav_contact a:hover {
+            color: #ffffff;
+            border-bottom: none;
+            transform: translateY(-3px);
+        }
+
+        nav a:hover {
+        color: #00e676;
+        }
+
+        .active {
+            color: #00e676;
+            font-weight: bold;
+            border-bottom: 2px solid #00e676;
+        }
+
+    }

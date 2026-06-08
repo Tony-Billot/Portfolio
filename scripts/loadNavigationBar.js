@@ -1,11 +1,12 @@
 const splittedCurrentFileName = window.location.pathname.split("/");
 const currentFileName = splittedCurrentFileName[splittedCurrentFileName.length - 1];
-console.log("Nous sommes dans la page " + currentFileName);
 
 if (currentFileName == "index.html") {
 
     document.write(`
+
         <nav>
+            <button id="nav_toogle" onClick="onClickNavToggle()">≡</button>
             <ul>
                 <li id="topleft_button">
                     <a href="index.html">
@@ -15,7 +16,7 @@ if (currentFileName == "index.html") {
 
                 <li id="nav_home"><a href="index.html">Accueil</a></li>
                 <li id="nav_projects"><a href="pages/presentation.html">Pr&eacute;sentation</a></li> <!-- &eacute; pour é -->
-                <li id="nav_contacts"><a href="pages/career.html">Parcours</a></li>
+                <li id="nav_career"><a href="pages/career.html">Parcours</a></li>
                 <li id="nav_skills-projects"><a href="pages/skills-projects.html">Comp&eacute;tences et Projets</a></li> <!-- &eacute; pour é -->
                 <li id="nav_contact"><a href="pages/contact.html">Me contacter</a></li>
             </ul>
@@ -24,9 +25,11 @@ if (currentFileName == "index.html") {
         const homeLink = document.querySelector('nav ul li#nav_home a').classList.add("active");
 }
 
-if (["presentation.html", "career.html", "skills-projects.html", "contact.html"].includes(currentFileName)) {
+else {
     document.write(`
+
         <nav>
+            <button id="nav_toogle" onClick="onClickNavToggle()">≡</button>
             <ul>
                 <li id="topleft_button">
                     <a href="../index.html">
@@ -48,4 +51,9 @@ if (["presentation.html", "career.html", "skills-projects.html", "contact.html"]
     if (currentPageLink) {
         currentPageLink.classList.add("active");
     }
+}
+
+function onClickNavToggle() {
+    const navUl = document.querySelector("nav ul");
+    navUl.classList.toggle("active");
 }
