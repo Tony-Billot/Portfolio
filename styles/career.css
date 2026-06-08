@@ -33,9 +33,6 @@ body {
     transform: translateX(-50%);
 }
 
-
-
-
 .card {
     position: relative;
     width: calc(50% - 48px);
@@ -99,11 +96,6 @@ body {
     word-break: break-word;
 }
 
-
-
-
-
-/* Couleurs bloc code */
 .kw {
     color: #79c0ff;
 }
@@ -135,15 +127,6 @@ body {
 .comment {
     color: #8b949e;
 }
-
-
-/*       */
-
-
-
-
-
-/* Format telephhone */
 
 @media (max-width: 640px) {
     #middle::before {

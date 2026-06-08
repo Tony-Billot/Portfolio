@@ -1,3 +1,8 @@
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 h1 {
     padding: clamp(10px, 2vw, 20px) clamp(20px, 3vw, 40px) clamp(6px, 1vw, 12px);
     color: white;
@@ -11,6 +16,7 @@ p {
     color: #9ca3af;
     font-family: "Arial", sans-serif;
     font-size: clamp(15px, 2.4vw, 28px);
+    margin-right: clamp(20px, 3vw, 40px);
     padding: clamp(8px, 1.2vw, 16px) clamp(12px, 1.8vw, 26px) clamp(3px, 0.6vw, 8px);
 }
 
@@ -52,8 +58,14 @@ span {
 #contact_content {
     display: flex;
     flex-direction: column;
-    padding-left: clamp(28px, 4.5vw, 56px);
+    margin-left: clamp(28px, 4.5vw, 56px);
     padding-bottom: clamp(4px, 0.7vw, 10px);
+}
+
+#right_content {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 3vw, 40px);
 }
 
 #contact_content p,
@@ -72,6 +84,7 @@ span {
     flex-direction: column;
     align-items: flex-start;
     padding-left: clamp(4px, 1.5vw, 16px);
+    margin-left: clamp(28px, 4.5vw, 56px);
     padding-bottom: clamp(4px, 0.7vw, 10px);
 }
 
@@ -100,4 +113,19 @@ h2 {
     display: flex;
     flex-direction: column;
 
+}
+
+@media (max-width: 1372px) {
+    #contact_page {
+        flex-direction: column; 
+    }
+
+    #contact_content {
+        padding-left: 0;
+    }
+
+    #contact_content p,
+    #contact_content .contact {
+        padding-left: 0;
+    }   
 }
