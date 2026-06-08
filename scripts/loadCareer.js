@@ -10,6 +10,7 @@ careerData = {
                 "Développement de ce portfolio en HTML, CSS, JavaScript, sans intervention d'IA. Renforcement de mes compétences en web. Apprentissage de l'utilisation de l'IA dans un cas pratique en entreprose.",
             ]
         } 
+
     ]
 };
 
