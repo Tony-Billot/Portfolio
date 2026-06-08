@@ -1,0 +1,106 @@
+body {
+    width: auto;
+    margin: clamp(12px, 2vw, 30px);
+    min-height: calc(100svh - clamp(24px, 4vw, 60px));
+    background-color: #131b27;
+    border: 2px solid #042039;
+    border-radius: 40px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+html {
+    background-color: #0d1117;
+}
+
+nav {
+    position: relative;
+    width: 100%;
+    min-height: 60px;
+    margin-bottom: clamp(12px, 2vw, 20px);
+    padding: clamp(12px, 2vw, 14px) clamp(16px, 2.5vw, 2rem) clamp(10px, 1.5vw, 12px);
+    box-sizing: border-box;
+    display: block;
+}
+
+nav::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #1f2937;
+}
+
+nav ul {
+    display: flex;
+    gap: clamp(10px, 1.4vw, 18px);
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    flex-wrap: nowrap;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: clamp(14px, 1.7vw, 32px);
+    padding: clamp(10px, 1.4vw, 25px) clamp(14px, 2vw, 32px);
+    font-family: "Arial", sans-serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    color: #00e676;
+}
+
+#topleft_button a {
+    color: #00e676;
+    font-weight: bold;
+    font-size: clamp(20px, 2.8vw, 48px);
+    padding: clamp(6px, 0.8vw, 14px) clamp(12px, 1.5vw, 24px);
+}
+
+#nav_contact a {
+    background: linear-gradient(to right, #00e676, #005eff);
+    color: #ffffff;
+    font-weight: bold;
+    font-size: clamp(12px, 1.7vw, 31px);
+    border-bottom: none;
+    padding: clamp(8px, 1vw, 20px) clamp(12px, 1.9vw, 32px);
+    border-radius: 10px;
+    box-shadow: 0 10px 24px rgba(0, 94, 255, 0.18);
+    transform: translateY(-2px);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#nav_contact {
+    margin-left: auto;
+}
+
+.active {
+    color: #00e676;
+    font-weight: bold;
+    border-bottom: 2px solid #00e676;
+}
+
+#nav_contact a.active, #nav_contact a:hover {
+    color: #ffffff;
+    border-bottom: none;
+    transform: translateY(-3px);
+}
+

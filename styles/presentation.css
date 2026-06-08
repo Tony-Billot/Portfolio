@@ -1,0 +1,109 @@
+body {
+    width: auto;
+    margin: clamp(12px, 2vw, 30px);
+    min-height: calc(100svh - clamp(24px, 4vw, 60px));
+    background-color: #131b27;
+    border: 2px solid #042039;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+#subtitle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+h2 {
+    color: #ffffff;
+    font-family: "Arial", sans-serif;
+    font-size: clamp(36px, 4vw, 50px);
+    margin: 10px 0 0 10px;
+    text-align: left;
+    display: block;
+}
+
+p {
+    color: #9ca3af;
+    font-family: "Arial", sans-serif;
+    font-size: clamp(12px, 1.4vw, 20px);
+}
+
+#green_dot {
+    color: #00e676;
+}
+
+#presentation_container {
+    gap: clamp(20px, 3vw, 40px);
+    padding: clamp(20px, 3vw, 40px);
+    display: flex;
+    flex-direction: flex-start;
+}
+
+#left_content {
+    margin-left: clamp(10px, 1.5vw, 20px);
+    flex: 1 1 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+#right_content {
+    flex: 1 1 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+
+#presentation_card {
+    background-color: #253244;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: flex-start;
+    align-items: center;
+}
+
+#presentation_card img {
+    width: clamp(250px, 25vw, 350px);
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 6px;
+    background: linear-gradient(to right, #00e676, #005eff);
+    margin-left: clamp(15px, 2vw, 30px);
+    margin-right: clamp(15px, 2vw, 30px);
+}
+
+#icon_infos {
+    color: #9ca3af;
+    font-size: clamp(12px, 1vw, 24px);
+    font-family: "Arial", sans-serif;
+    display: flex;
+    flex-direction: flex-start;
+    gap: clamp(20px, 3vw, 40px);
+    .material-icons {
+        font-size: clamp(20px, 2.5vw, 36px);
+        color: #00bf63;
+    }
+}
+
+#some_numbers {
+    margin-top: clamp(20px, 3vw, 40px);
+    background-color: #253244;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .h2 {
+        margin-bottom: clamp(10px, 1.5vw, 20px);
+        text-align: left;
+    }
+}
+
+#important_projects {
+    background-color: #253244;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
