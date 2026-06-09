@@ -9,38 +9,50 @@ careerData = {
             responsibilities: [
                 "Développement de ce portfolio en HTML, CSS, JavaScript, sans intervention d'IA. Renforcement de mes compétences en web. Apprentissage de l'utilisation de l'IA dans un cas pratique en entreprise.",
             ]
-        } 
-
+        },
+        {
+            title: "Etudiant à Polytech Tours",
+            place: "Polytech_Tours",
+            role: "Etudiant",
+            startDate: "2025-09-01",
+            endDate: null,
+            responsibilities: [
+                "Etudiant en cycle ingénieur à Polytech Tours",
+            ] 
+        },
+        {
+            title: "CTF: Passe Ton Hack D'Abord",
+            place: "Lycée_Léonard_de_Vinci-Amboise",
+            role: "Participant, équipe Hackers MaxiBG",
+            startDate: "2025-01-20",
+            endDate: "2025-02-07",
+            responsibilities: [
+                "Participant à la CTF 'Passe Ton Hack D'Abord' avec l'équipe Hackers MaxiBG. Arrivée à la 39ème place de la France, et 1ère place de la région Centre-Val de Loire.",
+            ] 
+        },
     ]
 };
 
 
-// Faire marcher _ça
 function sortCareerByDate(career) {
-    // Create items array
-    var items = Object.keys(career).map(function(key) {
-    return [key, career[key]];
-    });
+    career.sort(
+        function(first, second) {
+        return new Date(second.startDate).getTime() - new Date(first.startDate).getTime();
+        }
+    );
 
-    items.sort(function(first, second) {
-    console.log(first[4])
-    return new Date(second[4]).getTime() - new Date(first[4]).getTime();
-    });
-
-    console.log(items.slice(0, 5));
+    return career;
 }
 
-
-
-function formatDate(dateStr) { // Convertisseur format date français (mois en français / année)
+function formatDate(dateStr) {
     const date = new Date(dateStr);
     return date.toLocaleDateString("fr-FR", { month: "long", year: "numeric" });
 }
 
-function formatPeriod(startDate, endDate) { // Ecrit la date en haut de la carte
+function formatPeriod(startDate, endDate) { 
     const start = formatDate(startDate);
     if (endDate == null) {
-        var end = "Aujourd'hui"; // &eacute; = é
+        var end = "Aujourd'hui"; 
     } else {
         var end = formatDate(endDate);
     }
@@ -48,7 +60,6 @@ function formatPeriod(startDate, endDate) { // Ecrit la date en haut de la carte
 }
 
 
-// Fonction faite pour afficher la carte sous forme d'une pseudo-clase java
 function buildCareerCode(career) { 
     const className = career.place;
     let comments = "";
@@ -74,9 +85,11 @@ ${comments}
 }
 
 
+sortCareerByDate(careerData.career);
 
-var directionOfCard = "left"; // 0: gauche, 1: droite -> pour faire alterner les cartes entre gauche et droite (effet de style)
-const middle = document.getElementById("middle"); // ligne de séparation
+
+var directionOfCard = "left";
+const middle = document.getElementById("middle");
 
 for (career of careerData.career) {
 
@@ -97,14 +110,9 @@ for (career of careerData.career) {
         `
     );
 
-    // Switch entre les deux sens
     if(directionOfCard === "left") {
         directionOfCard = "right";
     } else {
         directionOfCard = "left";
     }
 }
-
-
-
-sortCareerByDate(careerData.career);

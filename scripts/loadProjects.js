@@ -10,7 +10,15 @@ const projectsData = [
         tags: ["frontend"],
         link: "https://github.com/Tony-Billot/Portfolio"
     },
-] // Data vide
+    {
+        title: "Aster Engine",
+        description: "Un moteur de jeu 2D, développé en C. Projet en cours de développement.",
+        image: "../assets/asterengine.png",
+        tags: ["c", "game-dev"],
+        link: "https://github.com/Tony-Billot/AsterEngine"
+    },
+
+] 
 
 renderProjects(projectsData);
 
