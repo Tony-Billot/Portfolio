@@ -1,7 +1,6 @@
 body {
     display: flex;
     flex-direction: column;
-    width: min(1400px, calc(100% - clamp(24px, 4vw, 60px)));
     margin: clamp(12px, 2vw, 30px) auto;
     min-height: calc(100svh - clamp(24px, 4vw, 60px));
     background-color: #131b27;
@@ -9,6 +8,7 @@ body {
     border-radius: 40px;
     overflow-x: hidden;
     overflow-y: scroll;
+    max-width: 98%;
 }
 
 #subtitle {
