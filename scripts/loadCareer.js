@@ -7,7 +7,7 @@ careerData = {
             startDate: "2026-06-01",
             endDate: "2026-07-05",
             responsibilities: [
-                "Développement de ce portfolio en HTML, CSS, JavaScript, sans intervention d'IA. Renforcement de mes compétences en web. Apprentissage de l'utilisation de l'IA dans un cas pratique en entreprose.",
+                "Développement de ce portfolio en HTML, CSS, JavaScript, sans intervention d'IA. Renforcement de mes compétences en web. Apprentissage de l'utilisation de l'IA dans un cas pratique en entreprise.",
             ]
         } 
 

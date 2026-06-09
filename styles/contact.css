@@ -112,7 +112,8 @@ h2 {
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-
+    margin-left: clamp(28px, 4.5vw, 56px);
+    margin-right: clamp(28px, 4.5vw, 56px);
 }
 
 @media (max-width: 1372px) {

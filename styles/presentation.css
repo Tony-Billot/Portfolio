@@ -1,8 +1,8 @@
 body {
     display: flex;
     flex-direction: column;
-    width: auto;
-    margin: clamp(12px, 2vw, 30px);
+    width: min(1400px, calc(100% - clamp(24px, 4vw, 60px)));
+    margin: clamp(12px, 2vw, 30px) auto;
     min-height: calc(100svh - clamp(24px, 4vw, 60px));
     background-color: #131b27;
     border: 2px solid #042039;
@@ -41,6 +41,8 @@ p {
     padding: clamp(20px, 3vw, 40px);
     display: flex;
     flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 #left_content {
@@ -56,19 +58,18 @@ p {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-
 }
 
 #presentation_card {
     background-color: #253244;
     border-radius: 15px;
     display: flex;
-    flex-direction: flex-start;
+    justify-content: flex-start;
     align-items: center;
 }
 
 #presentation_card img {
-    width: clamp(250px, 25vw, 350px);
+    width: clamp(50px, 25vw, 350px);
     height: auto;
     object-fit: cover;
     border-radius: 50%;
@@ -83,12 +84,13 @@ p {
     font-size: clamp(12px, 1vw, 24px);
     font-family: "Arial", sans-serif;
     display: flex;
-    flex-direction: flex-start;
+    justify-content: flex-start;
     gap: clamp(20px, 3vw, 40px);
-    .material-icons {
-        font-size: clamp(20px, 2.5vw, 36px);
-        color: #00bf63;
-    }
+}
+
+#icon_infos .material-icons {
+    font-size: clamp(20px, 2.5vw, 36px);
+    color: #00bf63;
 }
 
 #some_numbers {
@@ -98,10 +100,11 @@ p {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    .h2 {
-        margin-bottom: clamp(10px, 1.5vw, 20px);
-        text-align: left;
-    }
+}
+
+#some_numbers .h2 {
+    margin-bottom: clamp(10px, 1.5vw, 20px);
+    text-align: left;
 }
 
 #important_projects {
@@ -114,6 +117,7 @@ p {
     height: auto;
     gap: clamp(20px, 3vw, 40px);
     padding: clamp(20px, 3vw, 40px);
+    box-sizing: border-box;
 }
 
 ul {
@@ -121,11 +125,10 @@ ul {
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    gap: clamp(10px, 1.5vw, 24px);
+    gap: clamp(20px, 3vw, 40px);
     padding: clamp(12px, 2vw, 40px);
     margin: 0;
     box-sizing: border-box;
-    gap: clamp(20px, 3vw, 40px);
 }
 
 ul li {
@@ -141,7 +144,8 @@ ul li {
 }
 
 ul li .material-icons {
-    font-size: clamp(40px, 5vw, 72px);}
+    font-size: clamp(40px, 5vw, 72px);
+}
 
 ul li .material-icons.yellow {
     color: #dfd001;
@@ -155,16 +159,13 @@ ul li .material-icons.blue {
     color: #4447e6;
 }
 
-
-
-
-
 #projects {
     padding: 40px 20px 80px;
+    width: 100%;
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
-
 
 #projects-container {
     display: grid;
@@ -178,10 +179,11 @@ ul li .material-icons.blue {
     border-radius: 16px;
     overflow: hidden;
     transition: 0.25s ease;
+    cursor: pointer;
 }
 
 .project-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-6px) scale(1.01);
     border-color: #00e676;
 }
 
@@ -234,28 +236,96 @@ ul li .material-icons.blue {
     border-color: #00e676;
 }
 
-.project-card:hover {
-    transform: translateY(-6px) scale(1.01);
-}
-.project-card {
-    cursor: pointer;
-}
-
-
 @media (max-width: 1000px) {
 
     body {
-        position: relative;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        margin: clamp(12px, 2vw, 30px);
-        display: flex;
-        flex-direction: column;
+        width: calc(100% - 32px);
+        margin: 16px auto;
+        border-radius: 25px;
     }
 
     #presentation_container {
-        display: flex;
         flex-direction: column;
+        padding: 20px;
     }
 
+    #left_content {
+        margin-left: 0;
+    }
+
+    #right_content {
+        width: 100%;
+    }
+
+    #presentation_card {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+        gap: 20px;
+    }
+
+    #presentation_card img {
+        width: 160px;
+        margin: 0;
+    }
+
+    #subtitle {
+        justify-content: center;
+    }
+
+    h2 {
+        margin: 0;
+        text-align: center;
+        font-size: 2.2rem;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    #icon_infos {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    #some_numbers {
+        align-items: center;
+    }
+
+    ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+        padding: 20px;
+    }
+
+    ul li {
+        width: 100%;
+    }
+
+    ul li .material-icons {
+        font-size: 48px;
+    }
+
+    #important_projects {
+        padding: 20px;
+    }
+
+    #important_projects h2 {
+        text-align: left;
+        width: 100%;
+    }
+
+    #projects {
+        padding: 20px;
+    }
+
+    #projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        height: 140px;
+    }
 }

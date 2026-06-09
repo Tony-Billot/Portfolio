@@ -148,4 +148,18 @@ p {
     #right_content {
         justify-content: center;
     }
+
+ 
+}
+
+@media (max-width: 480px) {
+    #home_buttons {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #see_work, #learn_more {
+        width: 100%;
+        max-width: none;
+    }
 }
