@@ -99,14 +99,14 @@
 #right_content img {
     width: 100%;
     height: auto;
-    max-width: 500px;
+    max-width: 700px;
 }
 
 
 
 #left_content h1 {
     font-family: "Arial", sans-serif;
-    font-size: clamp(48px, 6.0vw, 68px);
+    font-size: clamp(32px, 4.0vw, 58px);
 }
 
 #left_content p {
@@ -123,7 +123,7 @@
 p {
     color: #9ca3af;
     font-family: "Arial", sans-serif;
-    font-size: clamp(14px, 1.7vw, 32px);
+    font-size: clamp(14px, 1.7vw, 24px);
 }
 
 

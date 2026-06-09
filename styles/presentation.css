@@ -26,6 +26,22 @@ h2 {
     display: block;
 }
 
+#country {
+    display: flex;
+    align-items: center; 
+}
+
+
+#age {
+    display: flex;
+    align-items: center; 
+}
+
+i {
+    margin-right: 6px;
+}
+
+
 p {
     color: #9ca3af;
     font-family: "Arial", sans-serif;
