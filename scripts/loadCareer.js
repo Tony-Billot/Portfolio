@@ -7,8 +7,11 @@ careerData = {
             startDate: "2026-06-01",
             endDate: "2026-07-05",
             responsibilities: [
-                "Développement de ce portfolio en HTML, CSS, JavaScript, sans intervention d'IA. Renforcement de mes compétences en web. Apprentissage de l'utilisation de l'IA dans un cas pratique en entreprise.",
-            ]
+                "Développement de ce portfolio en HTML, CSS, JavaScript, sans intervention d'IA.",
+                "Renforcement de mes compétences en web.",
+                "Apprentissage de l'utilisation de l'IA dans un cas pratique en entreprise.",
+            ],
+            "rewards": []
         },
         {
             title: "Etudiant à Polytech Tours",
@@ -18,7 +21,8 @@ careerData = {
             endDate: null,
             responsibilities: [
                 "Etudiant en cycle ingénieur à Polytech Tours",
-            ] 
+            ],
+            "rewards": []
         },
         {
             title: "CTF: Passe Ton Hack D'Abord",
@@ -27,8 +31,9 @@ careerData = {
             startDate: "2025-01-20",
             endDate: "2025-02-07",
             responsibilities: [
-                "Participant à la CTF 'Passe Ton Hack D'Abord' avec l'équipe Hackers MaxiBG. Arrivée à la 39ème place de la France, et 1ère place de la région Centre-Val de Loire.",
-            ] 
+                "Participant à la CTF 'Passe Ton Hack D'Abord' avec l'équipe Hackers MaxiBG.",
+            ],
+            "rewards": ["Arrivée à la 39ème place de la France, et 1ère place de la région Centre-Val de Loire."]
         },
                 {
         title: "Stage à Geovelo",
@@ -37,8 +42,10 @@ careerData = {
             startDate: "2022-01-01",
             endDate: "2022-02-01",
             responsibilities: [
-                "Stage d'une semaine. Réalisaton d'une application CV mobile et d'un TikTakToe (morpion) en Java, avec Android Studio,.",
-            ]
+                "Réalisaton d'une application CV mobile sur android studio en Java.",
+                "Réalisaton d'un TicTacToe (jeu de morpion) avec IA qui joue contre le joueur."
+            ],
+            "rewards": []
         },
     ]
 };
@@ -71,33 +78,21 @@ function formatPeriod(startDate, endDate) {
 
 
 function buildCareerCode(career) { 
-    const className = career.place;
-    let comments = "";
-    for (const responsibility of career.responsibilities) {
-        comments += `<span class="comment">// ${responsibility}</span>\n`;
-    }
-
     return `
-<span class="comment">// ===============================</span>
-<span class="comment">// ${career.title}</span>
-<span class="comment">// Lieu : ${career.place}</span>
-<span class="comment">// ===============================</span>
+<span class="type">Experience</span> <span class="var">exp</span> = <span class="kw">new</span> <span class="type">Experience</span><span class="brace-inner">(</span><span class="string">"${career.role}"</span><span class="brace-inner">)</span>;
 
-<span class="type">Experience</span> <span class="var">exp</span> = <span class="kw">new</span> <span class="type">Experience</span><span class="brace-inner">(</span>
-    <span class="string">"${career.role}"</span>
-<span class="brace-inner">)</span>;
-
-<span class="comment">// Informations associées</span>
 <span class="var">exp</span>.<span class="method">setTitle</span><span class="brace-inner">(</span><span class="string">"${career.title}"</span><span class="brace-inner">)</span>;
 <span class="var">exp</span>.<span class="method">setPlace</span><span class="brace-inner">(</span><span class="string">"${career.place}"</span><span class="brace-inner">)</span>;
+<span class="var">exp</span>.<span class="method">setDates</span><span class="brace-inner">(</span><span class="string">"${career.startDate}"</span>, <span class="string">"${career.endDate}"</span><span class="brace-inner">)</span>;
 
-<span class="comment">// Responsabilités</span>
+
 ${career.responsibilities.map(r =>
 `<span class="var">exp</span>.<span class="method">addResponsibility</span><span class="brace-inner">(</span><span class="string">"${r}"</span><span class="brace-inner">)</span>;`
 ).join("\n")}
+${career.rewards.map(r =>
+`<span class="var">exp</span>.<span class="method">addReward</span><span class="brace-inner">(</span><span class="string">"${r}"</span><span class="brace-inner">)</span>;`
+).join("\n")}
 
-<span class="comment">// Exécution de l'expérience</span>
-<span class="var">exp</span>.<span class="method">experience</span><span class="brace-inner">()</span>;
 `;
 }
 
@@ -106,11 +101,11 @@ sortCareerByDate(careerData.career);
 
 
 var directionOfCard = "left";
-const middle = document.getElementById("middle");
+const cards = document.getElementById("cards");
 
 for (career of careerData.career) {
 
-    middle.insertAdjacentHTML(
+    cards.insertAdjacentHTML(
         "beforeend",
         `
 

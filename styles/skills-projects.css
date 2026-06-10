@@ -10,12 +10,11 @@ p {
 #skills-section {
     text-align: center;
     padding:clamp(24px, 4vw, 48px) clamp(24px, 4vw, 48px) clamp(16px, 3vw, 32px);
-    margin: 0px 20px 40px;
 }
 
 #multicolor-text {
     font-family: Arial, sans-serif;
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(1.25rem, 4vw, 3rem);
     background: linear-gradient(to right, #00e676, #005eff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -24,7 +23,7 @@ p {
 .subtitle {
     margin-top: 12px;
     color: #b5b5b5;
-    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-size: clamp(0.875rem, 1.5vw, 1.25rem);
     font-family: Arial, sans-serif;
 }
 
@@ -33,7 +32,7 @@ p {
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .skill {

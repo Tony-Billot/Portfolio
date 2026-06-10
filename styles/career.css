@@ -1,6 +1,6 @@
 #multicolor-text {
     font-family: "Arial", sans-serif;
-    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    font-size: clamp(1.25rem, 4vw, 3rem);
     background: linear-gradient(to right, #00e676, #005eff);
     background-clip: text;
     -webkit-background-clip: text;
@@ -40,17 +40,20 @@ body {
 
 .card.left {
     margin-right: auto;
+    margin-bottom: clamp(32px, 5vw, 64px);
 }
 
 .card.right {
     margin-left: auto;
+    margin-bottom: clamp(32px, 5vw, 64px);
 }
 
 
 .card.center-card {
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 0px;
+    margin-bottom: clamp(32px, 5vw, 64px);    
+    width: 80%
 }
 
 .card-date {
@@ -135,9 +138,10 @@ body {
 
 @media (max-width: 640px) {
     #middle::before {
-        margin-top: -100%;
         left: 16px;
         transform: none;
+        top: 0;
+        bottom: 0;
     }
 
     .card {
@@ -146,11 +150,22 @@ body {
         margin-right: 0 !important;
         margin-top: 32px;
     }
+
 }
+
 
 @media (min-width: 641px) {
-
-    #middle .card:not(:first-child) {
+    #middle .card:not(:first-child):not(.center-card) {
         margin-top: -200px;
     }
+
+    .card.center-card {
+        margin-top: 100px;
+        width: 80%;
+    }
+
+    #middle::before {
+        margin-bottom: 200px;
+    }
 }
+    
