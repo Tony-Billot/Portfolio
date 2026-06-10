@@ -10,7 +10,7 @@ const projectsData = [
         tags: ["frontend"],
         link: "https://github.com/Tony-Billot/Portfolio"
     },
-] // Data vide
+] 
 
 renderProjects(projectsData);
 

@@ -36,8 +36,6 @@ body {
 .card {
     position: relative;
     width: calc(50% - 48px);
-    margin-bottom: 48px;
-    box-sizing: border-box;
 }
 
 .card.left {
@@ -46,6 +44,13 @@ body {
 
 .card.right {
     margin-left: auto;
+}
+
+
+.card.center-card {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 0px;
 }
 
 .card-date {
@@ -130,6 +135,7 @@ body {
 
 @media (max-width: 640px) {
     #middle::before {
+        margin-top: -100%;
         left: 16px;
         transform: none;
     }
@@ -138,5 +144,13 @@ body {
         width: calc(100% - 48px);
         margin-left: 48px !important;
         margin-right: 0 !important;
+        margin-top: 32px;
+    }
+}
+
+@media (min-width: 641px) {
+
+    #middle .card:not(:first-child) {
+        margin-top: -200px;
     }
 }

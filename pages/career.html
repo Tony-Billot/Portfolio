@@ -17,7 +17,44 @@
     <body>
         <h1 id="multicolor-text">Mon parcours scolaire et professionnel</h1>
 
+        <div class="card center-card">
+            <div class="code-window">
+                <div class="code-window-bar">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+                <pre class="code-block">
+                    <code>
+<span class="comment">// Classe représentant une expérience professionnelle. Nous pouvons en créer autant d'instances que nécessaire !</span>
+
+<span class="kw">public</span> <span class="kw">class</span> <span class="type">Experience</span> <span class="kw">extends <span class="param">Career </span><span class="brace-outer">{</span>
+
+    <span class="kw">private</span> <span class="type">String</span> <span class="var">role</span>;
+
+    <span class="kw">public</span> <span class="type">Experience</span><span class="brace-inner">(</span><span class="type">String</span> <span class="param">role</span><span class="brace-inner">)</span> <span class="brace-inner">{</span>
+        <span class="kw">this</span>.<span class="var">role</span> = <span class="var">role</span>;
+    <span class="brace-inner">}</span>
+
+    <span class="kw">public</span> <span class="kw">void</span> <span class="method">experience</span><span class="brace-inner">()</span> <span class="brace-inner">{</span>
+        <span class="kw">return</span> <span class="kw">this</span>;
+    <span class="brace-inner">}</span>
+<span class="brace-outer">}</span>          
+                    </code>
+                </pre>
+            </div>
+        </div>
         <div id="middle"></div>
+
+
+
+
+
+
+
+
+
+        
         <script src="../scripts/loadCareer.js"></script>
     </body>
 </html>

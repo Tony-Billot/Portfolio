@@ -77,20 +77,27 @@ function buildCareerCode(career) {
         comments += `<span class="comment">// ${responsibility}</span>\n`;
     }
 
-    return `<span class="kw">public</span> <span class="kw">class</span> <span class="type">${className}</span> <span class="brace-outer">{</span>
+    return `
+<span class="comment">// ===============================</span>
+<span class="comment">// ${career.title}</span>
+<span class="comment">// Lieu : ${career.place}</span>
+<span class="comment">// ===============================</span>
 
-    <span class="kw">private</span> <span class="type">String</span> <span class="var">role</span>;
+<span class="type">Experience</span> <span class="var">exp</span> = <span class="kw">new</span> <span class="type">Experience</span><span class="brace-inner">(</span>
+    <span class="string">"${career.role}"</span>
+<span class="brace-inner">)</span>;
 
-    <span class="kw">public</span> <span class="type">${className}</span><span class="brace-inner">(</span><span class="type">String</span> <span class="param">role</span><span class="brace-inner">)</span> <span class="brace-inner">{</span>
-        <span class="kw">this</span>.<span class="var">role</span> = <span class="var">role</span>;
-    <span class="brace-inner">}</span>
+<span class="comment">// Informations associées</span>
+<span class="var">exp</span>.<span class="method">setTitle</span><span class="brace-inner">(</span><span class="string">"${career.title}"</span><span class="brace-inner">)</span>;
+<span class="var">exp</span>.<span class="method">setPlace</span><span class="brace-inner">(</span><span class="string">"${career.place}"</span><span class="brace-inner">)</span>;
 
-${comments}
-    <span class="kw">public</span> <span class="kw">void</span> <span class="method">experience</span><span class="brace-inner">()</span> <span class="brace-inner">{</span>
-        <span class="kw">return</span> <span class="kw">this</span>;
-    <span class="brace-inner">}</span>
-<span class="brace-outer">}</span>
-<span class="kw">new</span> <span class="type">${className}</span><span class="brace-inner">(</span><span class="string">"${career.role}"</span><span class="brace-inner">)</span>.<span class="method">experience</span><span class="brace-inner">()</span>;
+<span class="comment">// Responsabilités</span>
+${career.responsibilities.map(r =>
+`<span class="var">exp</span>.<span class="method">addResponsibility</span><span class="brace-inner">(</span><span class="string">"${r}"</span><span class="brace-inner">)</span>;`
+).join("\n")}
+
+<span class="comment">// Exécution de l'expérience</span>
+<span class="var">exp</span>.<span class="method">experience</span><span class="brace-inner">()</span>;
 `;
 }
 
@@ -106,6 +113,7 @@ for (career of careerData.career) {
     middle.insertAdjacentHTML(
         "beforeend",
         `
+
         <div class="card ${directionOfCard}">
             <p class="card-date">${formatPeriod(career.startDate, career.endDate)}</p>
             <div class="code-window">
