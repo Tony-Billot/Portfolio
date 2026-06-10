@@ -7,7 +7,7 @@ const projectsData = [
         title: "Portfolio 2026",
         description: "Un portfolio créé en 2026, uniquement en HTML, CSS et Javascript.",
         image: "../assets/portfolio2026.png",
-        tags: ["frontend"],
+        tags: ["html-css", "javascript"],
         link: "https://github.com/Tony-Billot/Portfolio"
     },
     {
@@ -17,7 +17,13 @@ const projectsData = [
         tags: ["c", "game-dev"],
         link: "https://github.com/Tony-Billot/AsterEngine"
     },
-
+    {
+        title: "MyFirstApp",
+        description: "Ma première application mobile, développée en Java en 2022, durant mon stage de 3ème.",
+        image: "../assets/myfirstapp.png",
+        tags: ["java", "mobile-dev"],
+        link: "https://github.com/Tony-Billot/MyFirstApp"
+    }
 ] 
 
 renderProjects(projectsData);

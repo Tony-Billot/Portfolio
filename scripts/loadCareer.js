@@ -30,6 +30,16 @@ careerData = {
                 "Participant à la CTF 'Passe Ton Hack D'Abord' avec l'équipe Hackers MaxiBG. Arrivée à la 39ème place de la France, et 1ère place de la région Centre-Val de Loire.",
             ] 
         },
+                {
+        title: "Stage à Geovelo",
+            place: "Geovelo",
+            role: "Stagiaire",
+            startDate: "2022-01-01",
+            endDate: "2022-02-01",
+            responsibilities: [
+                "Stage d'une semaine. Réalisaton d'une application CV mobile et d'un TikTakToe (morpion) en Java, avec Android Studio,.",
+            ]
+        },
     ]
 };
 
