@@ -133,3 +133,10 @@ p {
 .project-card {
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+    #projects-container {
+        
+        grid-template-columns: 1fr;
+    }
+}
