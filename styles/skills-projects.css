@@ -9,7 +9,7 @@ p {
 
 #skills-section {
     text-align: center;
-    padding:clamp(24px, 4vw, 48px) clamp(24px, 4vw, 48px) clamp(16px, 3vw, 32px);
+    margin-top: 60px;
 }
 
 #multicolor-text {

@@ -85,15 +85,12 @@ function buildCareerCode(career) {
 <span class="var">exp</span>.<span class="method">setPlace</span><span class="brace-inner">(</span><span class="string">"${career.place}"</span><span class="brace-inner">)</span>;
 <span class="var">exp</span>.<span class="method">setDates</span><span class="brace-inner">(</span><span class="string">"${career.startDate}"</span>, <span class="string">"${career.endDate}"</span><span class="brace-inner">)</span>;
 
-
 ${career.responsibilities.map(r =>
 `<span class="var">exp</span>.<span class="method">addResponsibility</span><span class="brace-inner">(</span><span class="string">"${r}"</span><span class="brace-inner">)</span>;`
 ).join("\n")}
 ${career.rewards.map(r =>
 `<span class="var">exp</span>.<span class="method">addReward</span><span class="brace-inner">(</span><span class="string">"${r}"</span><span class="brace-inner">)</span>;`
-).join("\n")}
-
-`;
+).join("\n")}`;
 }
 
 

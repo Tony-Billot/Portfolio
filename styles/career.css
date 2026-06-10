@@ -16,6 +16,7 @@ body {
 }
 
 #middle {
+    margin-top: 32px;
     position: relative;
     max-width: 100%;
     margin: 0 auto;
@@ -23,6 +24,7 @@ body {
 }
 
 #middle::before {
+    margin-top: clamp(64px, 10vw, 128px);
     content: "";
     position: absolute;
     left: 50%;
@@ -30,7 +32,7 @@ body {
     bottom: 0;
     width: 4px;
     background: linear-gradient(to bottom, #00e676, #005eff);
-    transform: translateX(-50%);
+    transform: translateX(clamp(50%, 2px, -4px)) translateY(2%);
 }
 
 .card {
@@ -140,8 +142,6 @@ body {
     #middle::before {
         left: 16px;
         transform: none;
-        top: 0;
-        bottom: 0;
     }
 
     .card {
@@ -160,12 +160,12 @@ body {
     }
 
     .card.center-card {
-        margin-top: 100px;
+        margin-top: 150px;
         width: 80%;
     }
 
     #middle::before {
-        margin-bottom: 200px;
+        margin-bottom: 300px;
     }
 }
     

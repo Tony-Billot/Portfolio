@@ -103,8 +103,9 @@ a {
 h2 {
     color: #ffffff;
     font-family: "Arial", sans-serif;
-    font-size: clamp(8px, 2vw, 25px);
+    font-size: clamp(0.875rem, 1.5vw, 1.25rem);
     margin-top: 0;
+    margin-left: clamp(6px, 2vw, 14px);
 }
 
 #free_for {
@@ -116,7 +117,8 @@ h2 {
     margin-left: clamp(28px, 4.5vw, 56px);
     margin-right: clamp(28px, 4.5vw, 56px);
     gap: clamp(12px, 1.5vw, 30px);
-    width: 100%
+    width: 80%;
+    margin-bottom: clamp(20px, 3vw, 40px);
 }
 
 @media (max-width: 1372px) {
@@ -124,10 +126,15 @@ h2 {
         flex-direction: column; 
     }
 
-
-
     #contact_content p,
     #contact_content .contact {
         padding-left: 0;
     }   
+
+    #free_for {
+        margin-left: clamp(28px, 4.5vw, 56px);
+        margin-right: clamp(28px, 4.5vw, 56px);
+        left: auto;
+        right: auto;
+    }
 }
