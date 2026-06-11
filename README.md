@@ -76,7 +76,7 @@ http://localhost:8000
 ## Screenshots
 
 <img width="1902" height="934" alt="image" src="https://github.com/user-attachments/assets/c824531e-b539-4bbd-966a-5b058e9f57c0" />
-<img width="1892" height="935" alt="image" src="https://github.com/user-attachments/assets/528c0f5d-a177-431e-b76c-beec2ef90be3" />
+<img width="1898" height="931" alt="image" src="https://github.com/user-attachments/assets/46c289a8-188f-4897-ba10-107e73088d4e" />
 
 
 ## Author
