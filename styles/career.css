@@ -142,13 +142,22 @@ body {
     #middle::before {
         left: 16px;
         transform: none;
+        display: none;
     }
 
     .card {
-        width: calc(100% - 48px);
-        margin-left: 48px !important;
+        width: calc(100%);
+        margin-left: 12px !important;
         margin-right: 0 !important;
         margin-top: 32px;
+    }
+
+    .card.center-card {
+        display: none;
+    }
+
+    span {
+        font-size: clamp(10px, 1.5vw, 18px);
     }
 
 }
