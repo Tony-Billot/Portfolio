@@ -138,18 +138,24 @@ body {
     color: #8b949e;
 }
 
+
 @media (max-width: 640px) {
     #middle::before {
-        left: 16px;
         transform: none;
         display: none;
     }
 
+    #middle {
+        gap: 0;
+        padding: 16px 8px 80px;
+    }
+
     .card {
-        width: calc(100%);
-        margin-left: 12px !important;
+        width: 100%;
+        margin-left: 0 !important;
         margin-right: 0 !important;
         margin-top: 32px;
+        gap: 1px;
     }
 
     .card.center-card {
@@ -157,7 +163,7 @@ body {
     }
 
     span {
-        font-size: clamp(10px, 1.5vw, 18px);
+        font-size: clamp(8px, 1.5vw, 18px);
     }
 
 }

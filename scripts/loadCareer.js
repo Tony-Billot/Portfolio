@@ -79,7 +79,7 @@ function formatPeriod(startDate, endDate) {
 
 function buildCareerCode(career) { 
     return `
-<span class="type">Experience</span> <span class="var">exp</span> = <span class="kw">new</span> <span class="type">Experience</span><span class="brace-inner">(</span><span class="string">"${career.role}"</span><span class="brace-inner">)</span>;
+<span class="type">val</span> <span class="var">exp</span> = <span class="type">Experience</span><span class="brace-inner">(</span><span class="string">"${career.role}"</span><span class="brace-inner">)</span>;
 
 <span class="var">exp</span>.<span class="method">setTitle</span><span class="brace-inner">(</span><span class="string">"${career.title}"</span><span class="brace-inner">)</span>;
 <span class="var">exp</span>.<span class="method">setPlace</span><span class="brace-inner">(</span><span class="string">"${career.place}"</span><span class="brace-inner">)</span>;
@@ -87,10 +87,10 @@ function buildCareerCode(career) {
 
 ${career.responsibilities.map(r =>
 `<span class="var">exp</span>.<span class="method">addResponsibility</span><span class="brace-inner">(</span><span class="string">"${r}"</span><span class="brace-inner">)</span>;`
-).join("\n")}
+).join("\n\n")}
 ${career.rewards.map(r =>
 `<span class="var">exp</span>.<span class="method">addReward</span><span class="brace-inner">(</span><span class="string">"${r}"</span><span class="brace-inner">)</span>;`
-).join("\n")}`;
+).join("\n\n")}`;
 }
 
 

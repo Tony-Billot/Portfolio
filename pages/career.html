@@ -34,45 +34,38 @@
                     <span class="dot dot-green"></span>
                 </div>
                 <pre class="code-block">
-                    <code>
-    <span class="kw">public</span> <span class="kw">class</span> <span class="type">Experience</span> <span class="kw">extends</span> <span class="param">Career</span> <span class="brace-outer">{</span>
-        <span class="kw">private</span> <span class="type">String</span> <span class="var">title</span>;
-        <span class="kw">private</span> <span class="type">String</span> <span class="var">place</span>;
-        <span class="kw">private</span> <span class="type">String</span> <span class="var">startDate</span>;
-        <span class="kw">private</span> <span class="type">String</span> <span class="var">endDate</span>;
-        <span class="kw">private</span> <span class="type">String</span> <span class="var">role</span>;
+<span class="kw">class</span> <span class="type">Experience</span><span class="brace-inner">(</span><span class="kw">private</span> <span class="kw">var</span> <span class="param">role</span><span class="operator">:</span> <span class="type">String</span><span class="brace-inner">)</span> <span class="operator">:</span> <span class="type">Career</span><span class="brace-inner">()</span> <span class="brace-outer">{</span>
 
-        <span class="kw">private</span> <span class="type">List</span><span class="brace-inner">&lt;</span><span class="type">String</span><span class="brace-inner">&gt;</span> <span class="var">responsabilities</span>;
-        <span class="kw">private</span> <span class="type">List</span><span class="brace-inner">&lt;</span><span class="type">String</span><span class="brace-inner">&gt;</span> <span class="var">rewards</span>;   
+    <span class="kw">private</span> <span class="kw">var</span> <span class="var">title</span><span class="operator">:</span> <span class="type">String</span><span class="operator">?</span> <span class="operator">=</span> <span class="kw">null</span>
+    <span class="kw">private</span> <span class="kw">var</span> <span class="var">place</span><span class="operator">:</span> <span class="type">String</span><span class="operator">?</span> <span class="operator">=</span> <span class="kw">null</span>
+    <span class="kw">private</span> <span class="kw">var</span> <span class="var">startDate</span><span class="operator">:</span> <span class="type">String</span><span class="operator">?</span> <span class="operator">=</span> <span class="kw">null</span>
+    <span class="kw">private</span> <span class="kw">var</span> <span class="var">endDate</span><span class="operator">:</span> <span class="type">String</span><span class="operator">?</span> <span class="operator">=</span> <span class="kw">null</span>
 
-        <span class="kw">public</span> <span class="type">Experience</span><span class="brace-inner">(</span><span class="type">String</span> <span class="param">role</span><span class="brace-inner">)</span> <span class="brace-inner">{</span>
-            <span class="kw">this</span>.<span class="var">role</span> = <span class="var">role</span>;
-            <span class="kw">this</span>.<span class="var">responsabilities</span> = <span class="kw">new</span> <span class="type">ArrayList</span><span class="brace-inner">&lt;</span><span class="brace-inner">&gt;</span><span class="brace-inner">()</span>;
-            <span class="kw">this</span>.<span class="var">rewards</span> = <span class="kw">new</span> <span class="type">ArrayList</span><span class="brace-inner">&lt;</span><span class="brace-inner">&gt;</span><span class="brace-inner">()</span>;
-        <span class="brace-inner">}</span>
+    <span class="kw">private</span> <span class="kw">val</span> <span class="var">responsibilities</span> <span class="operator">=</span> <span class="method">mutableListOf</span><span class="brace-inner">&lt;</span><span class="type">String</span><span class="brace-inner">&gt;()</span>
+    <span class="kw">private</span> <span class="kw">val</span> <span class="var">rewards</span> <span class="operator">=</span> <span class="method">mutableListOf</span><span class="brace-inner">&lt;</span><span class="type">String</span><span class="brace-inner">&gt;()</span>
 
-        <span class="kw">public</span> <span class="type">void</span> <span class="method">setTitle</span><span class="brace-inner">(</span><span class="type">String</span> <span class="param">title</span><span class="brace-inner">)</span> <span class="brace-inner">{</span>
-            <span class="kw">this</span>.<span class="var">title</span> = <span class="var">title</span>;
-        <span class="brace-inner">}</span>
+    <span class="kw">fun</span> <span class="method">setTitle</span><span class="brace-inner">(</span><span class="param">title</span><span class="operator">:</span> <span class="type">String</span><span class="brace-inner">)</span> <span class="brace-inner">{</span>
+        <span class="kw">this</span>.<span class="var">title</span> <span class="operator">=</span> <span class="var">title</span>
+    <span class="brace-inner">}</span>
 
-        <span class="kw">public</span> <span class="type">void</span> <span class="method">setPlace</span><span class="brace-inner">(</span><span class="type">String</span> <span class="param">place</span><span class="brace-inner">)</span> <span class="brace-inner">{</span>
-            <span class="kw">this</span>.<span class="var">place</span> = <span class="var">place</span>;
-        <span class="brace-inner">}</span>
+    <span class="kw">fun</span> <span class="method">setPlace</span><span class="brace-inner">(</span><span class="param">place</span><span class="operator">:</span> <span class="type">String</span><span class="brace-inner">)</span> <span class="brace-inner">{</span>
+        <span class="kw">this</span>.<span class="var">place</span> <span class="operator">=</span> <span class="var">place</span>
+    <span class="brace-inner">}</span>
 
-        <span class="kw">public</span> <span class="type">void</span> <span class="method">setDates</span><span class="brace-inner">(</span><span class="type">String</span> <span class="param">startDate</span>, <span class="type">String</span> <span class="param">endDate</span><span class="brace-inner">)</span> <span class="brace-inner">{</span>
-            <span class="kw">this</span>.<span class="var">startDate</span> = <span class="var">startDate</span>;
-            <span class="kw">this</span>.<span class="var">endDate</span> = <span class="var">endDate</span>;
-        <span class="brace-inner">}</span>
+    <span class="kw">fun</span> <span class="method">setDates</span><span class="brace-inner">(</span><span class="param">startDate</span><span class="operator">:</span> <span class="type">String</span>, <span class="param">endDate</span><span class="operator">:</span> <span class="type">String</span><span class="operator">?</span><span class="brace-inner">)</span> <span class="brace-inner">{</span>
+        <span class="kw">this</span>.<span class="var">startDate</span> <span class="operator">=</span> <span class="var">startDate</span>
+        <span class="kw">this</span>.<span class="var">endDate</span> <span class="operator">=</span> <span class="var">endDate</span>
+    <span class="brace-inner">}</span>
 
-        <span class="kw">public</span> <span class="type">void</span> <span class="method">addResponsibility</span><span class="brace-inner">(</span><span class="type">String</span> <span class="param">responsibility</span><span class="brace-inner">)</span> <span class="brace-inner">{</span>
-            <span class="kw">this</span>.<span class="var">responsabilities</span>.<span class="method">add</span><span class="brace-inner">(</span><span class="var">responsibility</span><span class="brace-inner">)</span>;
-        <span class="brace-inner">}</span>
+    <span class="kw">fun</span> <span class="method">addResponsibility</span><span class="brace-inner">(</span><span class="param">responsibility</span><span class="operator">:</span> <span class="type">String</span><span class="brace-inner">)</span> <span class="brace-inner">{</span>
+        <span class="var">responsibilities</span>.<span class="method">add</span><span class="brace-inner">(</span><span class="var">responsibility</span><span class="brace-inner">)</span>
+    <span class="brace-inner">}</span>
 
-        <span class="kw">public</span> <span class="type">void</span> <span class="method">addReward</span><span class="brace-inner">(</span><span class="type">String</span> <span class="param">reward</span><span class="brace-inner">)</span> <span class="brace-inner">{</span>
-            <span class="kw">this</span>.<span class="var">rewards</span>.<span class="method">add</span><span class="brace-inner">(</span><span class="var">reward</span><span class="brace-inner">)</span>;
-        <span class="brace-inner">}</span>
+    <span class="kw">fun</span> <span class="method">addReward</span><span class="brace-inner">(</span><span class="param">reward</span><span class="operator">:</span> <span class="type">String</span><span class="brace-inner">)</span> <span class="brace-inner">{</span>
+        <span class="var">rewards</span>.<span class="method">add</span><span class="brace-inner">(</span><span class="var">reward</span><span class="brace-inner">)</span>
+    <span class="brace-inner">}</span>
 
-    <span class="brace-outer">}</span></code>
+<span class="brace-outer">}</span>
                 </pre>
             </div>
         </div>
