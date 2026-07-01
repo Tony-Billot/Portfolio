@@ -29,7 +29,7 @@ const projectsData = [
     description: "Un organisateur de fichiers développé en python, permettant de trier automatiquement les fichiers dans des dossiers spécifiques.",
     image: "../assets/fileorganizer.png",
     tags: ["python", "automation"],
-    link: "https://github.com/Tony-Billot/FileOrganizer"
+    link: "https://github.com/Tony-Billot/File-Organizer"
     }
 ] 
 
