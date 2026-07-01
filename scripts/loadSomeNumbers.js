@@ -9,20 +9,20 @@ async function getGithubProjects() {
 }
 
 async function getTotalCommitCount() {
-    const reposRes = await fetch(
-        "https://api.github.com/users/Tony-Billot/repos"
-    );
+    const reposRes = await fetch("https://api.github.com/users/Tony-Billot/repos");
     const repos = await reposRes.json();
-    let totalCommits = 0;
-    for (const repo of repos) {
-        const commitsRes = await fetch(
-            `https://api.github.com/repos/Tony-Billot/${repo.name}/commits`
-        );
-        const commits = await commitsRes.json();
-        if (Array.isArray(commits)) {
-            totalCommits += commits.length;
-        }
-    }
+
+    const commitCounts = await Promise.all(
+        repos.map(async (repo) => {
+            const commitsRes = await fetch(
+                `https://api.github.com/repos/Tony-Billot/${repo.name}/commits`
+            );
+            const commits = await commitsRes.json();
+            const count = Array.isArray(commits) ? commits.length : 0;
+            return count;
+        })
+    );
+    const totalCommits = commitCounts.reduce((a, b) => a + b, 0);
     return totalCommits;
 }
 
