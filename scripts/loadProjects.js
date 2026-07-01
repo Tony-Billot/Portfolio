@@ -23,6 +23,13 @@ const projectsData = [
         image: "../assets/myfirstapp.png",
         tags: ["java", "mobile-dev"],
         link: "https://github.com/Tony-Billot/MyFirstApp"
+    },
+    {
+    title: "File Organizer",
+    description: "Un organisateur de fichiers développé en python, permettant de trier automatiquement les fichiers dans des dossiers spécifiques.",
+    image: "../assets/fileorganizer.png",
+    tags: ["python", "automation"],
+    link: "https://github.com/Tony-Billot/FileOrganizer"
     }
 ] 
 
